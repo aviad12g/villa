@@ -129,7 +129,7 @@ static bool loc_valid_impl(const cv::Mat_<cv::Vec<T,C>> &m, const cv::Vec2d &l)
     if (l[0] == -1)
         return false;
 
-    cv::Rect bounds = {0, 0, m.rows-2,m.cols-2};
+    cv::Rect bounds = {0, 0, m.rows-1,m.cols-1};
     cv::Vec2i li = {static_cast<int>(floor(l[0])), static_cast<int>(floor(l[1]))};
 
     if (!bounds.contains(cv::Point(li)))
@@ -151,7 +151,7 @@ static bool loc_valid_scalar(const cv::Mat_<float> &m, const cv::Vec2d &l)
     if (l[0] == -1)
         return false;
 
-    cv::Rect bounds = {0, 0, m.rows-2,m.cols-2};
+    cv::Rect bounds = {0, 0, m.rows-1,m.cols-1};
     cv::Vec2i li = {static_cast<int>(floor(l[0])), static_cast<int>(floor(l[1]))};
 
     if (!bounds.contains(cv::Point(li)))
